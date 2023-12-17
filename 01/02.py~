@@ -1,0 +1,23 @@
+import sys
+data = open(sys.argv[1]).read().strip()
+#print(data)
+#sum1 = 0
+sum2 = 0
+for line in data.split('\n'):
+#    sum1_digits = []
+    sum2_digits = []
+    for count,val in enumerate(line):
+        if val.isdigit():
+#           sum1_digits.append(val)
+           sum2_digits.append(val)
+        for num,word in enumerate(['one','two','three','four','five','six','seven','eight','nine']):
+            if line[count:].startswith(word):
+                sum2_digits.append(str(num+1)) # map the strings to the index, which is the value offset by 1
+#    print(sum1_digits)
+    print(sum2_digits)
+#    sum1 += int(sum1_digits[0] + sum1_digits[-1])
+    sum2 += int(sum2_digits[0] + sum2_digits[-1])
+#print(sum1)
+print(sum2)
+
+            
